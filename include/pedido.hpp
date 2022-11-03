@@ -16,8 +16,8 @@ private:
 
 public:
     Pedido(string endereco);
-    void adiciona_produto(Produto *p);
-    float calcula_total();
+    void adicionar_produto(Produto *produto);
+    float valor_total();
     void print_resumo();
 };
 

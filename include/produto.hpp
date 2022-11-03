@@ -4,13 +4,13 @@
 class Produto
 {
 protected:
-    int _q;
+    int _quantidade;
     float _valorUnitario;
 
 public:
-    Produto(int q, float valor_unitario);
+    Produto(int quantidade, float valor_unitario);
     virtual void print();
-    int get_q();
+    int get_quantidade();
     float get_valorUnit();
 };
 

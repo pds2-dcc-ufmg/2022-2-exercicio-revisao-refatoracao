@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Fiz atualizações básicas de nomenclatura, simplificação e organização, mas a funcionalidade é a mesma
 int main()
 {
     string endereco;
@@ -26,7 +27,7 @@ int main()
             cin >> sabor >> pedacos >> borda_rech >> valor >> quant;
             
             prod = new Pizza(quant, valor, pedacos, borda_rech, sabor); 
-            pedidos.adiciona_produto(prod);
+            pedidos.adicionar_produto(prod);
         }
         else if (tipo == "Hamburguer")
         {
@@ -39,7 +40,7 @@ int main()
             cin >> tipo >> artes >> valor >> quant;
 
             prod = new Hamburguer(quant, valor, tipo, artes);
-            pedidos.adiciona_produto(prod);
+            pedidos.adicionar_produto(prod);
         }
     }
 

@@ -16,7 +16,7 @@ protected:
     bool _artesanal;
 
 public:
-    Hamburguer(int q, float valor_unitario, string tipo, bool artesanal);
+    Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal);
     virtual void print() override;
 };
 
