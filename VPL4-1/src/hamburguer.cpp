@@ -8,9 +8,9 @@ Hamburguer::~Hamburguer() {}
 void Hamburguer::print() {
 
     cout << "Hamburguer" << endl;
-    cout << "\tQuantidade: " << this->getQuantidade() << endl;
-    cout << "\tValor Unitario: " << this->getValorUnitario() << endl;
-    cout << "\tTipo: " << this->_tipo << endl;
+    cout << "\t" << "Quantidade: " << this->getQuantidade() << endl;
+    cout << "\t" << "Valor Unitario: " << this->getValorUnitario() << endl;
+    cout << "\t" << "Tipo: " << this->_tipo << endl;
     if (this->_artesanal)
-        cout << "\tArtesanal" << endl;
+        cout << "\t" << "Artesanal" << endl;
 }

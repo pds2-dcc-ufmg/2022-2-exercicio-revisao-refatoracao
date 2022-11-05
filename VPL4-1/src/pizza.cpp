@@ -8,9 +8,9 @@ Pizza::~Pizza() {}
 void Pizza::print() {
 
     cout << "Pizza de " << this->_sabor << endl;
-    cout << "\tQuantidade: " << this->getQuantidade() << endl;
-    cout << "\tValor Unitario: " << this->getValorUnitario() << endl;
-    cout << "\tPedacos: " << this->_pedacos << endl;
+    cout << "\t" << "Quantidade: " << this->getQuantidade() << endl;
+    cout << "\t" << "Valor Unitario: " << this->getValorUnitario() << endl;
+    cout << "\t" << "Pedacos: " << this->_pedacos << endl;
     if (this->_bordaRecheada)
         cout << "\tBorda Recheada" << endl;
 }

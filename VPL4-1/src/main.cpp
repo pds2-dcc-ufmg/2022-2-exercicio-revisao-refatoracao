@@ -38,6 +38,7 @@ int main() {
 
                 Produto* pizza = new Pizza(quantidade, valorUnitario, pedacos, bordaRecheada, sabor);
                 pedido->adicionarProduto(pizza);
+                
                 break;
             }
 
@@ -54,6 +55,7 @@ int main() {
 
                 Produto* hamburguer = new Hamburguer(quantidade, valorUnitario, tipo, artesanal);
                 pedido->adicionarProduto(hamburguer);
+                
                 break;
             }
         }
