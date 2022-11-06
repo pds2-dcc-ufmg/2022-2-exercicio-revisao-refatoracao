@@ -19,6 +19,7 @@ class Pizza: public Produto {
         string _sabor;
         int _pedacos;
         bool _borda_recheada;
+        float _taxa_borda = 1.4;
 };
 
 #endif

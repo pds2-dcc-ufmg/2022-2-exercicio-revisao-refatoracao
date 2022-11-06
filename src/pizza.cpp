@@ -1,6 +1,12 @@
 #include "pizza.hpp"
 
-Pizza::Pizza(int quantidade, float valor_unitario, string sabor, int pedacos, bool borda_recheada) : Produto(quantidade, valor_unitario), _sabor(sabor), _pedacos(pedacos), _borda_recheada(borda_recheada) {}
+Pizza::Pizza(int quantidade, float valor_unitario, string sabor, int pedacos, bool borda_recheada) : Produto(quantidade, valor_unitario), _sabor(sabor), _pedacos(pedacos), _borda_recheada(borda_recheada) {
+    
+    if (borda_recheada) {
+        valor_unitario = valor_unitario * _taxa_borda;
+        set_valor_unitario(valor_unitario);
+    }    
+}
 
 void Pizza::print() {
 

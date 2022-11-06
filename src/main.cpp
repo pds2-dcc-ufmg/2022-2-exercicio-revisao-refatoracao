@@ -24,11 +24,6 @@ int main() {
 
             cin >> sabor >> pedacos >> borda_recheada >> valor_unitario >> quantidade;
 
-            if (borda_recheada) {
-                float taxa_borda = 1.4;
-                valor_unitario = valor_unitario * taxa_borda;
-            }
-
             prod = new Pizza(quantidade, valor_unitario, sabor, pedacos, borda_recheada);
             pedidos.adiciona_produto(prod);
         }
@@ -42,11 +37,6 @@ int main() {
             bool artesanal;
 
             cin >> tipo_hamburguer >> artesanal >> valor_unitario >> quantidade;
-
-            if (artesanal) {
-                float taxa_artesanal = 2.0;
-                valor_unitario = valor_unitario * taxa_artesanal;
-            }
 
             prod = new Hamburguer(quantidade, valor_unitario, tipo_hamburguer, artesanal);
             pedidos.adiciona_produto(prod);

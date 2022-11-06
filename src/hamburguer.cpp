@@ -1,6 +1,12 @@
 #include "hamburguer.hpp"
 
-Hamburguer::Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal): Produto(quantidade, valor_unitario), _tipo(tipo), _artesanal(artesanal) {}
+Hamburguer::Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal): Produto(quantidade, valor_unitario), _tipo(tipo), _artesanal(artesanal) {
+    
+    if(artesanal) {
+        valor_unitario = valor_unitario * taxa_artesanal;
+        set_valor_unitario(valor_unitario);
+    } 
+}
 
 void Hamburguer::print() {
 

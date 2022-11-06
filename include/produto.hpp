@@ -3,9 +3,10 @@
 class Produto{
     public:
         Produto(int quantidade, float valor_unitario);
+        virtual void print();
         int get_quantidade();
         float get_valor_unitario();
-        virtual void print();
+        void set_valor_unitario(float valor_unitario);
 
     private:
         int _quantidade;

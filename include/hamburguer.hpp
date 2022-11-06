@@ -16,6 +16,7 @@ class Hamburguer : public Produto {
     private:
         string _tipo;
         bool _artesanal;
+        float taxa_artesanal = 2.0;
 
 };
 

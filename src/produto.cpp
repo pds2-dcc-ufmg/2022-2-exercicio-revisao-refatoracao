@@ -13,3 +13,7 @@ float Produto::get_valor_unitario() {
 void Produto::print() {
     return;
 }
+
+void Produto::set_valor_unitario(float valor_unitario) {
+    _valor_unitario = valor_unitario;
+}
