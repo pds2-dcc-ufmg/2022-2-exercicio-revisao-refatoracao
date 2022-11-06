@@ -18,6 +18,7 @@ class Pedido {
     public:
         Pedido(string endereco);
         ~Pedido();
+        
         void adicionarProduto(Produto* p);
         float calcularTotal();
         void printResumo();

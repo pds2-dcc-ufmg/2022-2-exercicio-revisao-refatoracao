@@ -14,16 +14,16 @@ int main() {
     getline(cin, endereco);
     Pedido* pedido = new Pedido(endereco);    
     
-    /*Mapeando as entradas para facilitar o uso do switch*/
+    /*Mapeando as entradas possíveis para facilitar o uso do switch*/
     map <string, int> entradas = {{"Pizza", 1}, {"Hamburguer", 2}};
     string data;
-    int valor1;
+    int key;
     
     while (cin >> data) {
 
-        valor1 = entradas[data];
+        key = entradas[data];
 
-        switch (valor1) {
+        switch (key) {
 
             case 1: {
 

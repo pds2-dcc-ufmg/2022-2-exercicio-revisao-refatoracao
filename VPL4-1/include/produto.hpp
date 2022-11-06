@@ -10,6 +10,7 @@ class Produto {
     public:
         Produto(int quantidade, float valorUnitario);
         virtual ~Produto();
+        
         virtual void print() = 0;
         int getQuantidade();
         float getValorUnitario();

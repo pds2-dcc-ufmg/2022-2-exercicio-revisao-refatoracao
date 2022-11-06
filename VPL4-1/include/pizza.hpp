@@ -18,7 +18,8 @@ class Pizza : public Produto {
     public:
         Pizza(int quantidade, float valorUnitario, int pedacos, bool bordaRecheada, string sabor);
         ~Pizza();
-        virtual void print() override;
+
+        void print() override;
 };
 
 #endif
