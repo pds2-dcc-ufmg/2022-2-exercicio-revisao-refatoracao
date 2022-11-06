@@ -9,50 +9,54 @@
 using namespace std;
 
 int main() {
-    string line;
-    string tipo;
+    string endereco_cliente;
+    string tipo_produto;
 
-    getline(cin, line);
-    Pedido pedidos(line);
+    getline(cin, endereco_cliente);
+    Pedido pedidos (endereco_cliente);
     
-    while (cin >> tipo) {
-        if (tipo == "Pizza") {
+    while (cin >> tipo_produto) {
+        if (tipo_produto == "Pizza") {
             produto* prod;
             string sabor;
-            int q,p,b_r;            
-            float v;
 
-            cin >> sabor >> p >> b_r >> v >> q;
+            int quantidade, pedacos, borda_recheada;            
+            float valor_unitario;
 
-            if (b_r == 1) {
-                v = v*1.4;
+            cin >> sabor >> pedacos >> borda_recheada >> valor_unitario >> quantidade;
+
+            if (borda_recheada == 1) {
+                float taxa_borda = 1.4;
+                valor_unitario = valor_unitario * taxa_borda;
             }
 
             if (sabor == "Calabresa") {
-                prod = new pizza_calabresa(q,v,p,b_r);
+                prod = new pizza_calabresa(quantidade, valor_unitario, pedacos, borda_recheada);
                 pedidos.adiciona_produto(prod);
             }
 
             else if (sabor == "Marguerita") {
-                prod = new pizza_marguerita(q,v,p,b_r);
+                prod = new pizza_marguerita(quantidade, valor_unitario, pedacos, borda_recheada);
                 pedidos.adiciona_produto(prod);
             }
         }
 
-        else if (tipo == "Hamburguer") {
+        else if (tipo_produto == "Hamburguer") {
             produto* prod;
-            string tipo;
-            int q;
-            float v;
-            int a;
+            string tipo_hamburguer;
 
-            cin >> tipo >> a >> v >> q;
+            int quantidade;
+            float valor_unitario;
+            int artesanal;
 
-            if (a == 1) {
-                v = 2.0*v;
+            cin >> tipo_hamburguer >> artesanal >> valor_unitario >> quantidade;
+
+            if (artesanal == 1) {
+                float taxa_artesanal = 2.0;
+                valor_unitario = valor_unitario * taxa_artesanal;
             }
 
-            prod = new hamburguer(q, v, tipo, a);
+            prod = new hamburguer(quantidade, valor_unitario, tipo_hamburguer, artesanal);
             pedidos.adiciona_produto(prod);
         }
     }
