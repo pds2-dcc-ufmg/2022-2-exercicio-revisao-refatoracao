@@ -1,6 +1,6 @@
 #include "pizza.hpp"
 
-Pizza::Pizza(string sabor, int quantidade, float valor_unitario, int pedacos, bool borda_recheada): Produto(quantidade, valor_unitario),  _sabor(sabor), _pedacos(pedacos), _borda_recheada(borda_recheada) {
+Pizza::Pizza(int quantidade, float valor_unitario, string sabor, int pedacos, bool borda_recheada): Produto(quantidade, valor_unitario), _sabor(sabor), _pedacos(pedacos), _borda_recheada(borda_recheada) {
 
     //verifica se a pizza tem borda recheada e aplica 40% de aumento, em caso verdadeiro
     if(borda_recheada) {

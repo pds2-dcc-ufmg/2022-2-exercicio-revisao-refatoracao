@@ -30,7 +30,7 @@ int main(){
 
                 cin >> sabor >> pedacos >> borda_recheada >> valor_unitario >> quantidade;
 
-                shared_ptr<Pizza> pizza(new Pizza(sabor, quantidade, valor_unitario, pedacos, borda_recheada));
+                shared_ptr<Pizza> pizza(new Pizza(quantidade, valor_unitario, sabor, pedacos, borda_recheada));
                 pedidos->adiciona_produto(pizza);
 
             } else if(tipo == "hamburguer") {

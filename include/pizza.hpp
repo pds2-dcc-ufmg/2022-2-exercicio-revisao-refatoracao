@@ -13,11 +13,11 @@ using namespace std;
 class Pizza: public Produto {
     protected:
         string _sabor;
-        bool _borda_recheada;
         int _pedacos;
+        bool _borda_recheada;
         
     public:
-        Pizza(string sabor, int quantidade, float valor_unitario, int pedacos, bool borda_recheada);
+        Pizza(int quantidade, float valor_unitario, string sabor, int pedacos, bool borda_recheada);
         virtual ~Pizza();
 
         string get_sabor();
