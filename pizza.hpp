@@ -1,25 +1,28 @@
 #ifndef PIZZA_H
 #define PIZZA_H
 
+#define TAXA_BORDA_RECHEADA 1.4f
+
 #include "produto.hpp"
+
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-class pizza: public produto {
+class Pizza: public Produto {
+    protected:
+        string _sabor;
+        bool _borda_recheada;
+        int _pedacos;
+        
     public:
-     pizza(int q, float valor_unitario, int pedacos, bool borda_rech): produto(q, valor_unitario), pedacos(pedacos), borda_recheada(borda_rech){}
-        int pedacos;
-        virtual string get_sabor()=0;
-        virtual void print() override{
-            cout << "Pizza de " << get_sabor() << endl;
-            cout << "\tQuantidade: " << q << endl;
-            cout << "\tValor Unitario: " << valorUnitario << endl;
-            cout << "\tPedacos: " << pedacos << endl;
-            if (borda_recheada) cout << "\tBorda Recheada" << endl;
-        }
-        bool borda_recheada;
+        Pizza(string sabor, int quantidade, float valor_unitario, int pedacos, bool borda_recheada);
+        virtual ~Pizza();
+
+        string get_sabor();
+        void is_borda_recheada();
+        virtual void print() override;
 };
 
 #endif

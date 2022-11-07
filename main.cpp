@@ -1,51 +1,54 @@
 #include "pedido.hpp"
-#include "produto.hpp"
 #include "hamburguer.hpp"
 #include "pizza.hpp"
-#include "pizza_calabresa.hpp"
-#include "pizza_marguerita.hpp"
+
 #include <iostream>
+#include <cstring>
+#include <algorithm>
 
 using namespace std;
 
 int main(){
-string line;
-getline(cin, line);
-Pedido pedidos(line);
-string tipo;
-while(cin >> tipo){
-if(tipo == "Pizza"){
-produto* prod;
-string sabor;
-int q,p,b_r;            
-float v;
-cin >> sabor >> p >> b_r >> v >> q;
-if(b_r == 1){
-v = v*1.4;
-}
-if (sabor == "Calabresa"){
-prod = new pizza_calabresa(q,v,p,b_r);
-pedidos.adiciona_produto(prod);
-}
-else if (sabor == "Marguerita"){
-prod = new pizza_marguerita(q,v,p,b_r);
-pedidos.adiciona_produto(prod);
-}
-}
-else if(tipo == "Hamburguer"){
-produto* prod;
-int q;
-float v;
-string tipo;
-int a;
-cin >> tipo >> a >> v >> q;
-if(a == 1){
-v = 2.0*v;
-}
-prod = new hamburguer(q, v, tipo, a);
-pedidos.adiciona_produto(prod);
-}
-}
-pedidos.print_resumo();
-return 0;
+    string endereco;
+    string tipo;
+    string sabor;
+    int quantidade, pedacos;
+    float valor_unitario;
+    bool borda_recheada, artesanal;            
+    
+    //cria um smart pointer de Pedido no heap, com base no endereço informado no input do usuário
+    getline(cin, endereco);
+    unique_ptr<Pedido> pedidos(new Pedido(endereco));
+
+    while(cin >> tipo) {
+        //transforma o input do usuário do tipo de produto para lowercase (ex: Pizza -> pizza)
+        transform(tipo.begin(), tipo.end(), tipo.begin(), ::tolower);
+        
+        //bloco para tratar exceção caso produto informado pelo usuário não seja válido
+        try {
+            if(tipo == "pizza") {
+
+                cin >> sabor >> pedacos >> borda_recheada >> valor_unitario >> quantidade;
+
+                shared_ptr<Pizza> pizza(new Pizza(sabor, quantidade, valor_unitario, pedacos, borda_recheada));
+                pedidos->adiciona_produto(pizza);
+
+            } else if(tipo == "hamburguer") {
+
+                cin >> tipo >> artesanal >> valor_unitario >> quantidade;
+
+                shared_ptr<Hamburguer> hamburguer(new Hamburguer(quantidade, valor_unitario, tipo, artesanal));
+                pedidos->adiciona_produto(hamburguer);
+            } else {
+                throw "Produto invalido.";
+            }
+
+        } catch(const char* produto_exception) {
+            cout << "Excecao: " << produto_exception << endl;
+        }
+    }
+
+    //imprime endereço, valor total, itens e informações dos itens do pedido
+    pedidos->print_resumo();
+    return 0;
 }
