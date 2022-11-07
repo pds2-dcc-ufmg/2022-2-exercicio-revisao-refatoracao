@@ -1,6 +1,6 @@
 #include "hamburguer.hpp"
 
-Hamburguer::Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal): Produto(quantidade, valor_unitario), _tipo(tipo) {
+Hamburguer::Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal): Produto(quantidade, valor_unitario), _tipo(tipo), _artesanal(artesanal) {
 
     //verifica se o hamburguer é artesanal e aplica 100% de aumento, em caso verdadeiro
     if(_artesanal) {
