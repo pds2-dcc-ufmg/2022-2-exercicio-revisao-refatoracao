@@ -1,19 +1,22 @@
 #ifndef PRODUTO_H
 #define PRODUTO_H
 
+
 class Produto {
     public:
-        Produto(int q, float valor_unitario);
+        Produto(int quantidade, double valor_unitario);
         
         virtual void print();
 
-        float get_valor_unitario();
+        double get_valor_unitario();
+
+        virtual ~Produto();
 
         int get_quantidade();
     
     private:
         int _quantidade;
-        float _valor_unitario;
+        double _valor_unitario;
 };
 
 #endif

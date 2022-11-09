@@ -10,17 +10,24 @@
 
 using namespace std;
 
+
 class Pizza : public Produto {
     public:
-        Pizza(int quantidade, float valor_unitario, int pedacos, bool borda_rech);
+        Pizza(int quantidade, float valor_unitario, int pedacos, bool borda_rech, string sabor);
 
-        virtual string get_sabor() = 0;
+        /* get_sabor Não é mais função virtual pura pois as subclasses foram removidas, mas é virtual para se vier a ter uma nova subclasse*/
+        virtual string get_sabor();
+
+        virtual void set_sabor(string sabor); /*Adicionado essa função para melhorar a manutenção se vier uma nova classe depois*/
+
+        virtual ~Pizza();                     
 
         virtual void print() override;
 
     private:
         int _pedacos;
         bool _borda_recheada;
+        string _sabor;
 };
 
 

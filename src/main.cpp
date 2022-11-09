@@ -2,10 +2,9 @@
 #include "Produto.hpp"
 #include "Hamburguer.hpp"
 #include "Pizza.hpp"
-#include "PizzaCalabresa.hpp"
-#include "PizzaMarguerita.hpp"
 
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -17,14 +16,13 @@ getline(cin, endereco_do_pedido);
 Pedido pedidos(endereco_do_pedido);
 
 string tipo;
-while(cin >> tipo) {
+while (cin >> tipo) {
 
     if (tipo == "Pizza") {
-        Produto* prod;
         string sabor;
 
         int quantidade, pedacos, borda_recheada;            
-        float valor_unitario;
+        double valor_unitario;
 
         cin >> sabor;
         cin >> pedacos;
@@ -32,38 +30,30 @@ while(cin >> tipo) {
         cin >> valor_unitario;
         cin >> quantidade;
 
-        if(borda_recheada == 1) {
+        if (borda_recheada == 1) {
             valor_unitario = valor_unitario * TARIFA_BORDA_RECHEADA;
         }
 
-        if (sabor == "Calabresa") {
-            prod = new PizzaCalabresa(quantidade, valor_unitario, pedacos, borda_recheada);
-            pedidos.adiciona_produto(prod);
-        }
-
-        else if (sabor == "Marguerita") {
-            prod = new PizzaMarguerita(quantidade, valor_unitario, pedacos, borda_recheada);
-            pedidos.adiciona_produto(prod);
-        }
+        unique_ptr<Produto> pizza_calabresa (new Pizza(quantidade, valor_unitario, pedacos, borda_recheada, sabor));
+        pedidos.adiciona_produto(move(pizza_calabresa));
     }
 
     else if (tipo == "Hamburguer") {
-        Produto* prod;
+        int quantidade, hamburguer_eh_artesanal;
+        double valor_unitario;
+        string tipo_do_hamburguer;
 
-        int quantidade, hamburguer_artesanal;
-        float valor_unitario;
-        string tipo;
-
-        cin >> tipo;
-        cin >> hamburguer_artesanal;
+        cin >> tipo_do_hamburguer;
+        cin >> hamburguer_eh_artesanal;
         cin >> valor_unitario;
+        cin >> quantidade;
 
-        if(hamburguer_artesanal == 1) {
+        if (hamburguer_eh_artesanal == 1) {
             valor_unitario = valor_unitario * TARIFA_ARTESANAL;
         }
 
-        prod = new Hamburguer(quantidade, valor_unitario, tipo, hamburguer_artesanal);
-        pedidos.adiciona_produto(prod);
+        unique_ptr<Produto> hamburguer (new Hamburguer(quantidade, valor_unitario, tipo_do_hamburguer, hamburguer_eh_artesanal)); 
+        pedidos.adiciona_produto(move(hamburguer));
     }
 
 }

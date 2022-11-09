@@ -10,9 +10,7 @@ all: $(BUILD_DIR)/$(NAME)
 
 $(BUILD_DIR)/$(NAME) : \
 		$(BUILD_DIR)/Pizza.o \
-		$(BUILD_DIR)/PizzaMarguerita.o \
-		$(BUILD_DIR)/PizzaCalabresa.o \
-		$(BUILD_DIR)/Main.o \
+		$(BUILD_DIR)/main.o \
 		$(BUILD_DIR)/Hamburguer.o \
 		$(BUILD_DIR)/Produto.o \
 		$(BUILD_DIR)/Pedido.o
@@ -25,7 +23,7 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CC) -c $(CFLAGS) $< -I $(INCLUDE_DIR) -o $@
 
 run:
-	$(BUILD_DIR)/$(NAME) < in.txt
+	./$(NAME) < in.txt
 
 clean:
 	rm -f $(BUILD_DIR)/*.o
