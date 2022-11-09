@@ -1,0 +1,15 @@
+#ifndef PIZZA_MARGUERITA_H
+#define PIZZA_MARGUERITA_H
+
+#include "pizza.hpp"
+
+
+class Pizza_marguerita: public Pizza {
+    public:
+        Pizza_marguerita(int quantidade, float valor_unitario, int pedacos, bool borda_rech);
+        
+        virtual std::string get_sabor() override;
+
+};
+
+#endif
