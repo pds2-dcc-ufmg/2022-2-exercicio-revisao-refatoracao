@@ -1,3 +1,4 @@
 .vscode/
 build/*.cpp
 !build/.gitkeep
+.gitignore
