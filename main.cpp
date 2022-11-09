@@ -5,47 +5,47 @@
 #include "pizza_calabresa.hpp"
 #include "pizza_marguerita.hpp"
 #include <iostream>
+#define Taxa_borda 1.4
+#define Taxa_artesanal 2.0
 
 using namespace std;
 
 int main(){
-string line;
+string line,tipo;
+int quantidade;
+float valor_unitario;
+Produto* prod;
+
 getline(cin, line);
 Pedido pedidos(line);
-string tipo;
+
 while(cin >> tipo){
-if(tipo == "Pizza"){
-produto* prod;
-string sabor;
-int q,p,b_r;            
-float v;
-cin >> sabor >> p >> b_r >> v >> q;
-if(b_r == 1){
-v = v*1.4;
+
+    if(tipo == "Pizza"){
+    int borda_rech,pedacos;
+    string sabor;
+    cin >> sabor >> pedacos >> borda_rech >> valor_unitario >> quantidade;
+
+    if(borda_rech == 1)
+    valor_unitario = valor_unitario*Taxa_borda;
+
+    if (sabor == "Calabresa")
+    prod = new Pizza_calabresa(quantidade,valor_unitario,pedacos,borda_rech);
+
+    else if (sabor == "Marguerita")
+    prod = new Pizza_marguerita(quantidade,valor_unitario,pedacos,borda_rech);
+
 }
-if (sabor == "Calabresa"){
-prod = new pizza_calabresa(q,v,p,b_r);
+    else if(tipo == "Hamburguer"){
+    int artesanal;
+    cin >> tipo >> artesanal >> valor_unitario >> quantidade;
+    if(artesanal == 1)
+    valor_unitario = Taxa_artesanal*valor_unitario;
+    prod = new Hamburguer(quantidade, valor_unitario, tipo, artesanal);
+    }
 pedidos.adiciona_produto(prod);
-}
-else if (sabor == "Marguerita"){
-prod = new pizza_marguerita(q,v,p,b_r);
-pedidos.adiciona_produto(prod);
-}
-}
-else if(tipo == "Hamburguer"){
-produto* prod;
-int q;
-float v;
-string tipo;
-int a;
-cin >> tipo >> a >> v >> q;
-if(a == 1){
-v = 2.0*v;
-}
-prod = new hamburguer(q, v, tipo, a);
-pedidos.adiciona_produto(prod);
-}
 }
 pedidos.print_resumo();
+
 return 0;
 }
