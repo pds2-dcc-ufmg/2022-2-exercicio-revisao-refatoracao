@@ -5,8 +5,9 @@ Pedido::Pedido(string endereco) {
     this->_endereco = endereco;
 }
 
-void Pedido::adiciona_produto(const shared_ptr<Produto> &prod) {  /*passando por referência para diminuir overhead e não precisar fazer cópia*/
-    this->_produtos.push_back(prod);
+/*passando por referência para diminuir overhead e não precisar fazer cópia*/
+void Pedido::adiciona_produto(unique_ptr<Produto> &prod) { 
+    this->_produtos.push_back(move(prod));
 }
 
 double Pedido::calcula_total() {
@@ -22,7 +23,7 @@ double Pedido::calcula_total() {
 void Pedido::print_resumo() {
     cout << "================================" << endl;
     cout << "Pedido - Endereco: " << this->_endereco << endl;
-    cout << "Valor total: " << calcula_total() << endl;
+    cout << "Valor total: " << this->calcula_total() << endl;
 
     for (auto it = this->_produtos.begin(); it != this->_produtos.end(); ++it) {
         (*it)->print();

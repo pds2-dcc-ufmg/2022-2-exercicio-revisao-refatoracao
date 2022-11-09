@@ -13,7 +13,8 @@ Hamburguer::~Hamburguer() {
 void Hamburguer::print() {
     cout << "Hamburguer" << endl;
 
-    Produto::print();      /*Chama o print do produto, já que o hamburguer é produto.*/
+    /*Chama o print do produto, já que o hamburguer é produto.*/
+    Produto::print();  
 
     cout << "\t" << "Tipo: " << this->_tipo << endl; 
     if (this->_artesanal == 1) cout << "\t" << "Artesanal" << endl;

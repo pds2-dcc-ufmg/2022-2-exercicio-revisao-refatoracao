@@ -35,7 +35,7 @@ while (cin >> tipo) {
         }
 
         unique_ptr<Produto> pizza_calabresa (new Pizza(quantidade, valor_unitario, pedacos, borda_recheada, sabor));
-        pedidos.adiciona_produto(move(pizza_calabresa));
+        pedidos.adiciona_produto(pizza_calabresa);
     }
 
     else if (tipo == "Hamburguer") {
@@ -53,7 +53,7 @@ while (cin >> tipo) {
         }
 
         unique_ptr<Produto> hamburguer (new Hamburguer(quantidade, valor_unitario, tipo_do_hamburguer, hamburguer_eh_artesanal)); 
-        pedidos.adiciona_produto(move(hamburguer));
+        pedidos.adiciona_produto(hamburguer);
     }
 
 }

@@ -10,7 +10,7 @@ class Produto {
 
         double get_valor_unitario();
 
-        virtual ~Produto();
+        virtual ~Produto(); /*Adicionado essa função para deletar corretamente as classes derivadas*/
 
         int get_quantidade();
     

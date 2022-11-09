@@ -15,14 +15,16 @@ class Pedido {
     public:
         Pedido(string endereco);
 
-        void adiciona_produto(const shared_ptr<Produto> &prod); /*Passando por referência para diminuir overhead e não precisar fazer cópia*/
+        /*Passando por referência para diminuir overhead e não precisar fazer cópia*/
+        void adiciona_produto(unique_ptr<Produto> &prod);
 
         double calcula_total();
 
         void print_resumo();
 
     private:
-        list<shared_ptr<Produto>> _produtos;    /*Adicionado lista de ponteiros compartilhados para ajudar na manipulação de memória*/
+        /*Adicionado lista de ponteiros únicos para ajudar na manipulação de memória*/
+        list<unique_ptr<Produto>> _produtos;   
         string _endereco;     
 };
 

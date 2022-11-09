@@ -1,7 +1,7 @@
 #ifndef PIZZA_H
 #define PIZZA_H
 
-#define TARIFA_BORDA_RECHEADA 1.4
+#define TARIFA_BORDA_RECHEADA 1.4  /*Tarifa se a borda for recheada*/
 
 #include "Produto.hpp"
 
@@ -18,8 +18,10 @@ class Pizza : public Produto {
         /* get_sabor Não é mais função virtual pura pois as subclasses foram removidas, mas é virtual para se vier a ter uma nova subclasse*/
         virtual string get_sabor();
 
-        virtual void set_sabor(string sabor); /*Adicionado essa função para melhorar a manutenção se vier uma nova classe depois*/
+        /*Adicionado essa função para melhorar a manutenção se vier uma nova classe depois*/
+        virtual void set_sabor(string sabor); 
 
+        /*Destrutor Virtual para, no futuro, deleter corretamente as classes filhas*/
         virtual ~Pizza();                     
 
         virtual void print() override;

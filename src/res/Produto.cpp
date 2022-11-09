@@ -9,7 +9,7 @@ Produto::Produto(int quantidade, double valor_unitario) {
 }
 
 Produto::~Produto() {
-    //Usando smart pointers
+    /*Usando smart pointers*/
 }
 
 void Produto::print() {
