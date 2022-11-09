@@ -10,13 +10,16 @@
 
 using namespace std;
 
-
 class Pedido {
     public:
         Pedido(string endereco);
 
         /*Passando por referência para diminuir overhead e não precisar fazer cópia*/
         void adiciona_produto(unique_ptr<Produto> &prod);
+
+        void adiciona_pizza(string pizza);
+
+        void adiciona_hamburguer(string hamburguer);
 
         double calcula_total();
 

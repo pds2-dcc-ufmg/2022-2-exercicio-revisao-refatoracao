@@ -24,3 +24,7 @@ double Produto::get_valor_unitario() {
 int Produto::get_quantidade() {
     return this->_quantidade;
 }
+
+void Produto::set_valor_unitario(double valor) {
+    this->_valor_unitario = valor;
+}

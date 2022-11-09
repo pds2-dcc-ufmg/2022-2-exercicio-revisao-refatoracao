@@ -8,11 +8,16 @@ class Produto {
         
         virtual void print();
 
+        virtual void adicionar_tarifas() = 0;
+
+        /*Adicionado essa função para deletar corretamente as classes derivadas*/
+        virtual ~Produto();
+
         double get_valor_unitario();
 
-        virtual ~Produto(); /*Adicionado essa função para deletar corretamente as classes derivadas*/
-
         int get_quantidade();
+
+        void set_valor_unitario(double valor);
     
     private:
         int _quantidade;

@@ -19,23 +19,18 @@ string tipo;
 while (cin >> tipo) {
 
     if (tipo == "Pizza") {
-        string sabor;
+        string sabor;   
 
         int quantidade, pedacos, borda_recheada;            
         double valor_unitario;
 
-        cin >> sabor;
-        cin >> pedacos;
-        cin >> borda_recheada;
-        cin >> valor_unitario;
-        cin >> quantidade;
+        cin >> sabor >> pedacos >> borda_recheada;
+        cin >> valor_unitario >> quantidade;
 
-        if (borda_recheada == 1) {
-            valor_unitario = valor_unitario * TARIFA_BORDA_RECHEADA;
-        }
+        unique_ptr<Produto> nova_pizza (new Pizza(quantidade, valor_unitario, pedacos, borda_recheada, sabor));
 
-        unique_ptr<Produto> pizza_calabresa (new Pizza(quantidade, valor_unitario, pedacos, borda_recheada, sabor));
-        pedidos.adiciona_produto(pizza_calabresa);
+        nova_pizza->adicionar_tarifas();
+        pedidos.adiciona_produto(nova_pizza);
     }
 
     else if (tipo == "Hamburguer") {
@@ -43,16 +38,12 @@ while (cin >> tipo) {
         double valor_unitario;
         string tipo_do_hamburguer;
 
-        cin >> tipo_do_hamburguer;
-        cin >> hamburguer_eh_artesanal;
-        cin >> valor_unitario;
-        cin >> quantidade;
+        cin >> tipo_do_hamburguer >> hamburguer_eh_artesanal;
+        cin >> valor_unitario >> quantidade;
 
-        if (hamburguer_eh_artesanal == 1) {
-            valor_unitario = valor_unitario * TARIFA_ARTESANAL;
-        }
+        unique_ptr<Produto> hamburguer (new Hamburguer(quantidade, valor_unitario, tipo_do_hamburguer, hamburguer_eh_artesanal));
 
-        unique_ptr<Produto> hamburguer (new Hamburguer(quantidade, valor_unitario, tipo_do_hamburguer, hamburguer_eh_artesanal)); 
+        hamburguer->adicionar_tarifas(); 
         pedidos.adiciona_produto(hamburguer);
     }
 

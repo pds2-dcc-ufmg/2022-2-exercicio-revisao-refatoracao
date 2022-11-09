@@ -4,16 +4,26 @@
 Hamburguer::Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal) : Produto(quantidade, valor_unitario) {
     this->_tipo = tipo;
     this->_artesanal = artesanal;
+
 }
 
 Hamburguer::~Hamburguer() {
     //Usando smart pointers
 }
 
+/*Checa se o hamburguer é artesanal e faz a modificação de valor*/
+void Hamburguer::adicionar_tarifas() {
+    if (this->_artesanal == 1) {
+        this->set_valor_unitario(TARIFA_ARTESANAL * this->get_valor_unitario());
+        return;
+    }
+
+    else return;
+}
+
 void Hamburguer::print() {
     cout << "Hamburguer" << endl;
 
-    /*Chama o print do produto, já que o hamburguer é produto.*/
     Produto::print();  
 
     cout << "\t" << "Tipo: " << this->_tipo << endl; 
