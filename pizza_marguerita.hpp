@@ -4,12 +4,16 @@
 #include "pizza.hpp"
 
 
-class pizza_marguerita: public pizza {
+class Pizza_marguerita: public Pizza {
+
     public:
-        pizza_marguerita(int q, float valor_unitario, int pedacos, bool borda_rech): pizza(q, valor_unitario, pedacos, borda_rech){get_sabor();}
+
+        Pizza_marguerita(int quantidade, float valor_unitario, int pedacos, bool borda_rech): Pizza(quantidade, valor_unitario, pedacos, borda_rech){get_sabor();}
+
         virtual string get_sabor() override{
             return "Marguerita";
         }
+
 };
 
 #endif

@@ -7,18 +7,28 @@
 
 using namespace std;
 
-class hamburguer: public produto{
+class Hamburguer: public Produto{
+
+    private:
+        string _tipo;
+        bool _artesanal;
+
+
+
     public:
-        hamburguer(int q, float valor_unitario, string tipo, bool artesanal): produto(q, valor_unitario), tipo(tipo), artesanal(artesanal){}
-        string tipo;
-        virtual void print() override{
+
+        Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal): Produto(quantidade, valor_unitario), _tipo(tipo), _artesanal(artesanal){}
+
+        
+        virtual void print_info() override{
+
             cout << "Hamburguer" << endl;
-            cout << "\tQuantidade: " << q << endl;
-            cout << "\tValor Unitario: " << valorUnitario << endl;
-            cout << "\tTipo: " << tipo << endl;
-            if (artesanal) cout << "\tArtesanal" << endl;
+            cout << "\tQuantidade: " << get_quantidade() << endl;
+            cout << "\tValor Unitario: " << this->get_valor_unitario() << endl;
+            cout << "\tTipo: " << _tipo << endl;
+            if (_artesanal) cout << "\tArtesanal" << endl;
+
         }
-        bool artesanal;
 
 };
 

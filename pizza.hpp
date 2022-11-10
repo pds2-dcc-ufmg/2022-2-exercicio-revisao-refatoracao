@@ -7,19 +7,34 @@
 
 using namespace std;
 
-class pizza: public produto {
+class Pizza: public Produto {
+    
+    private:
+
+      int _pedacos;
+      bool _borda_recheada;
+
     public:
-     pizza(int q, float valor_unitario, int pedacos, bool borda_rech): produto(q, valor_unitario), pedacos(pedacos), borda_recheada(borda_rech){}
-        int pedacos;
+
+        Pizza(int quantidade, float valor_unitario, int pedacos, bool borda_rech): Produto(quantidade, valor_unitario), _pedacos(pedacos), _borda_recheada(borda_rech){}
+
         virtual string get_sabor()=0;
-        virtual void print() override{
+
+        virtual void print_info() override{
+
             cout << "Pizza de " << get_sabor() << endl;
-            cout << "\tQuantidade: " << q << endl;
-            cout << "\tValor Unitario: " << valorUnitario << endl;
-            cout << "\tPedacos: " << pedacos << endl;
-            if (borda_recheada) cout << "\tBorda Recheada" << endl;
+            cout << "\tQuantidade: " << this->get_quantidade() << endl;
+            cout << "\tValor Unitario: " << this->get_valor_unitario() << endl;
+            cout << "\tPedacos: " << _pedacos << endl;
+
+            if (_borda_recheada) 
+            cout << "\tBorda Recheada" << endl;
+
         }
-        bool borda_recheada;
+        
+        int get_pedacos() { return this->_pedacos; }
+        bool get_borda_recheada() { return this->_borda_recheada; }
+
 };
 
 #endif
