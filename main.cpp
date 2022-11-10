@@ -17,9 +17,9 @@ int main(){
 
     string tipo_produto;
 
-    while(cin >> tipo_produto){
+    while(cin >> tipo_produto) {
 
-        if(tipo_produto == "Pizza"){
+        if(tipo_produto == "Pizza") {
 
             Produto* prod;
 
@@ -30,23 +30,23 @@ int main(){
             cin >> sabor >> pedacos >> borda_rech >> valor >> quantidade;
 
             /** aumenta o valor da pizza em 40% caso tenha borda recheada */
-            if(borda_rech == 1){
+            if(borda_rech == 1) {
                 valor = valor*1.4;
             }
 
             /** cria uma pizza calabresa ou marguerita */
-            if (sabor == "Calabresa"){
+            if(sabor == "Calabresa") {
 
                 prod = new Pizza_calabresa(quantidade, valor, pedacos, borda_rech);
                 pedidos.adiciona_produto(prod);
 
-             }else if (sabor == "Marguerita"){
+             }else if(sabor == "Marguerita") {
 
                 prod = new Pizza_marguerita(quantidade, valor, pedacos, borda_rech);
                 pedidos.adiciona_produto(prod);
 
             }
-        }else if(tipo_produto == "Hamburguer"){
+        }else if(tipo_produto == "Hamburguer") {
 
             Produto* prod;
 
@@ -58,7 +58,7 @@ int main(){
             cin >> tipo_hamb >> artesanal >> valor >> quantidade;
 
             /** aumenta o valor da hamburguer para o dobro caso seja artesanal */
-            if(artesanal == 1){
+            if(artesanal == 1) {
                 valor = valor*2.0;
             }
 
