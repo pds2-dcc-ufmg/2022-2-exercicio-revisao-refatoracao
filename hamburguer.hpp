@@ -13,12 +13,9 @@ class Hamburguer: public Produto{
         string _tipo;
         bool _artesanal;
 
-
-
     public:
 
-        Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal): Produto(quantidade, valor_unitario), _tipo(tipo), _artesanal(artesanal){}
-
+        Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal): Produto(quantidade, valor_unitario), _tipo(tipo), _artesanal(artesanal) {}
         
         virtual void print_info() override{
 
