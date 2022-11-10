@@ -10,6 +10,7 @@
 
 using namespace std;
 
+
 class Pedido {
     public:
         Pedido(string endereco);
@@ -17,9 +18,9 @@ class Pedido {
         /*Passando por referência para diminuir overhead e não precisar fazer cópia*/
         void adiciona_produto(unique_ptr<Produto> &prod);
 
-        void adiciona_pizza(string pizza);
+        void adiciona_pizza(int quantidade, int pedacos, bool borda_recheada, double valor_unitario, string sabor);       
 
-        void adiciona_hamburguer(string hamburguer);
+        void adiciona_hamburguer(int quantidade, double valor_unitario, string tipo_do_hamburguer, bool hamburguer_eh_artesanal);
 
         double calcula_total();
 

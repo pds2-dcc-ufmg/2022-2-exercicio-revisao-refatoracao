@@ -25,7 +25,7 @@ void Pizza::adicionar_tarifas() {
 }
 
 void Pizza::print() {
-    cout << "Pizza de " << this->get_sabor() << endl;
+    cout << "Pizza de " << this->_sabor << endl;
 
     Produto::print();       
 

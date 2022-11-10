@@ -19,7 +19,7 @@ class Pizza : public Produto {
 
         void adicionar_tarifas() override; 
 
-        virtual ~Pizza();                     
+        ~Pizza();                     
 
         virtual void print() override;
 

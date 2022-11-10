@@ -17,7 +17,7 @@ class Hamburguer: public Produto {
 
         virtual void print() override;
 
-        virtual ~Hamburguer();
+        ~Hamburguer();
 
         void adicionar_tarifas() override;
         
