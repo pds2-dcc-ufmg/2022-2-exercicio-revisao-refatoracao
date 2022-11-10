@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Hamburguer: public Produto{
+class Hamburguer: public Produto {
 
     private:
         string _tipo;
@@ -17,10 +17,10 @@ class Hamburguer: public Produto{
 
         Hamburguer(int quantidade, float valor_unitario, string tipo, bool artesanal): Produto(quantidade, valor_unitario), _tipo(tipo), _artesanal(artesanal) {}
         
-        virtual void print_info() override{
+        virtual void print_info() override {
 
             cout << "Hamburguer" << endl;
-            cout << "\tQuantidade: " << get_quantidade() << endl;
+            cout << "\tQuantidade: " << this->get_quantidade() << endl;
             cout << "\tValor Unitario: " << this->get_valor_unitario() << endl;
             cout << "\tTipo: " << _tipo << endl;
             if (_artesanal) cout << "\tArtesanal" << endl;
