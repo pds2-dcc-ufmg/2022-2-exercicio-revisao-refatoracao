@@ -20,7 +20,7 @@ class Pizza: public Produto {
 
         virtual string get_sabor() = 0;
 
-        virtual void print_info() override{
+        virtual void print_info() override {
 
             cout << "Pizza de " << get_sabor() << endl;
             cout << "\tQuantidade: " << this->get_quantidade() << endl;
