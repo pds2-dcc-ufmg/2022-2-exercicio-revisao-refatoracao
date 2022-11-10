@@ -16,9 +16,9 @@ class Pizza: public Produto {
 
     public:
 
-        Pizza(int quantidade, float valor_unitario, int pedacos, bool borda_rech): Produto(quantidade, valor_unitario), _pedacos(pedacos), _borda_recheada(borda_rech){}
+        Pizza(int quantidade, float valor_unitario, int pedacos, bool borda_rech): Produto(quantidade, valor_unitario), _pedacos(pedacos), _borda_recheada(borda_rech) {}
 
-        virtual string get_sabor()=0;
+        virtual string get_sabor() = 0;
 
         virtual void print_info() override{
 

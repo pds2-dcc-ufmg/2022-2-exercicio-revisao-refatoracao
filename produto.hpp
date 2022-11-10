@@ -10,9 +10,9 @@ class Produto{
     
     public:
          
-        Produto(int quantidade, float valor_unitario):_quantidade(quantidade), _valor_unitario(valor_unitario){}
+        Produto(int quantidade, float valor_unitario): _quantidade(quantidade), _valor_unitario(valor_unitario) {}
         
-        virtual void print_info(){}
+        virtual void print_info() {}
 
         float get_valor_unitario() { return this->_valor_unitario; }
         int get_quantidade() { return this->_quantidade; }

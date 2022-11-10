@@ -8,7 +8,7 @@ class Pizza_calabresa: public Pizza {
     
     public:
 
-        Pizza_calabresa(int quantidade, float valor_unitario, int pedacos, bool borda_rech): Pizza(quantidade, valor_unitario, pedacos, borda_rech){}
+        Pizza_calabresa(int quantidade, float valor_unitario, int pedacos, bool borda_rech): Pizza(quantidade, valor_unitario, pedacos, borda_rech) {}
 
         virtual string get_sabor() override{
             return "Calabresa";

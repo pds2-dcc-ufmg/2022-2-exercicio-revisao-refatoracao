@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Pedido{
+class Pedido {
 
     private:
 
