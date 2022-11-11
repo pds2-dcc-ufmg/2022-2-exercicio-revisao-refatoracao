@@ -13,16 +13,19 @@ void Pedido::adiciona_produto(unique_ptr<Produto> &prod) {
     this->_produtos.push_back(move(prod));
 }
 
-/*Adiciona uma pizza*/
 void Pedido::adiciona_pizza(int quantidade, int pedacos, bool borda_recheada, double valor_unitario, string sabor) {
 
-    unique_ptr<Produto> nova_pizza (new Pizza(quantidade, valor_unitario, pedacos, borda_recheada, sabor));   
-    nova_pizza->adicionar_tarifas();
+    //Cria um smart pointer para uma nova pizza
+    unique_ptr<Produto> nova_pizza (new Pizza(quantidade, valor_unitario, pedacos, borda_recheada, sabor));
 
+    //Adiciona as tarifas necessárias com o método adicionar_tarifa de cada produto
+    nova_pizza->adicionar_tarifas();   
+
+    //Coloca o arquivo na lista de produtos do pedido
     this->adiciona_produto(nova_pizza);
 }      
 
-/*Adiciona um hamburguer*/
+/*Mesmo procedimento do adiciona_pizza ocorre aqui*/
 void Pedido::adiciona_hamburguer(int quantidade, double valor_unitario, string tipo_do_hamburguer, bool hamburguer_eh_artesanal) {
 
     unique_ptr<Produto> novo_hamburguer (new Hamburguer(quantidade, valor_unitario, tipo_do_hamburguer, hamburguer_eh_artesanal));

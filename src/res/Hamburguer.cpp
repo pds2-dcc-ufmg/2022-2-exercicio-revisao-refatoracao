@@ -11,7 +11,7 @@ Hamburguer::~Hamburguer() {
     //Usando smart pointers
 }
 
-/*Checa se o hamburguer é artesanal e faz a modificação de valor*/
+/*Realiza a adição das tarifas necessárias usando o set_valor_unitario de produto*/
 void Hamburguer::adicionar_tarifas() {
     if (this->_artesanal == 1) {
         this->set_valor_unitario(TARIFA_ARTESANAL * this->get_valor_unitario());

@@ -15,6 +15,7 @@ string Pizza::get_sabor() {
     return this->_sabor;
 }
 
+/*Realiza a adição das tarifas necessárias usando o set_valor_unitario de produto*/
 void Pizza::adicionar_tarifas() {
     if (this->_borda_recheada == 1) {
         this->set_valor_unitario(TARIFA_BORDA_RECHEADA * this->get_valor_unitario());
