@@ -1,16 +1,16 @@
 #include "hamburguer.hpp"
 
-Hamburguer::Hamburguer(int quantidade, float valorUnitario, string tipo, bool artesanal) :
+Hamburguer::Hamburguer(int quantidade, float valorUnitario, std::string tipo, bool artesanal) :
 Produto(quantidade, valorUnitario), _tipo(tipo), _artesanal(artesanal) {}
 
 Hamburguer::~Hamburguer() {}
 
 void Hamburguer::print() {
 
-    cout << "Hamburguer" << endl;
-    cout << "\t" << "Quantidade: " << this->getQuantidade() << endl;
-    cout << "\t" << "Valor Unitario: " << this->getValorUnitario() << endl;
-    cout << "\t" << "Tipo: " << this->_tipo << endl;
+    std::cout << "Hamburguer" << std::endl;
+    std::cout << "\t" << "Quantidade: " << this->getQuantidade() << std::endl;
+    std::cout << "\t" << "Valor Unitario: " << this->getValorUnitario() << std::endl;
+    std::cout << "\t" << "Tipo: " << this->_tipo << std::endl;
     if (this->_artesanal)
-        cout << "\t" << "Artesanal" << endl;
+        std::cout << "\t" << "Artesanal" << std::endl;
 }

@@ -1,6 +1,6 @@
 #include "pedido.hpp"
 
-Pedido::Pedido(string endereco): _endereco(endereco) {}
+Pedido::Pedido(std::string endereco): _endereco(endereco) {}
 
 void Pedido::adicionarProduto(Produto* p) {
 
@@ -24,12 +24,12 @@ float Pedido::calcularTotal() {
 
 void Pedido::printResumo() {
 
-    cout << "================================" << endl;
-    cout << "Pedido - Endereco: " << this->_endereco << endl;
-    cout << "Valor total: " << this->calcularTotal() << endl;
+    std::cout << "================================" << std::endl;
+    std::cout << "Pedido - Endereco: " << this->_endereco << std::endl;
+    std::cout << "Valor total: " << this->calcularTotal() << std::endl;
     
     for (auto &it : this->_produtos)
         it->print();
 
-    cout << "================================" << endl;
+    std::cout << "================================" << std::endl;
 }

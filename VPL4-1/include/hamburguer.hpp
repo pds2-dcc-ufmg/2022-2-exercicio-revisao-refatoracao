@@ -6,16 +6,14 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
-
 class Hamburguer : public Produto {
     
     private:
-        string _tipo;
+        std::string _tipo;
         bool _artesanal;
     
     public:
-        Hamburguer(int quantidade, float valorUnitario, string tipo, bool artesanal);
+        Hamburguer(int quantidade, float valorUnitario, std::string tipo, bool artesanal);
         ~Hamburguer();
 
         void print() override;

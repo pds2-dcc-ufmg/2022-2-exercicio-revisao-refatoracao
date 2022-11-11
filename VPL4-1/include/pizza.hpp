@@ -2,21 +2,17 @@
 #define PIZZA_H
 
 #include "produto.hpp"
-
-#include <string>
 #include <iostream>
-
-using namespace std;
 
 class Pizza : public Produto {
     
     private:
         int _pedacos;
         bool _bordaRecheada;
-        string _sabor;
+        std::string _sabor;
     
     public:
-        Pizza(int quantidade, float valorUnitario, int pedacos, bool bordaRecheada, string sabor);
+        Pizza(int quantidade, float valorUnitario, int pedacos, bool bordaRecheada, std::string sabor);
         ~Pizza();
 
         void print() override;

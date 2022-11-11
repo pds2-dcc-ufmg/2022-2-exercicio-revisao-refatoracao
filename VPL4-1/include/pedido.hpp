@@ -3,20 +3,16 @@
 
 #include "produto.hpp"
 #include <list>
-#include <string>
-
 #include <iostream>
-
-using namespace std;
 
 class Pedido {
     
     private:
-        list<Produto*> _produtos;
-        string _endereco;    
+        std::list<Produto*> _produtos;
+        std::string _endereco;    
     
     public:
-        Pedido(string endereco);
+        Pedido(std::string endereco);
         ~Pedido();
         
         void adicionarProduto(Produto* p);
