@@ -53,9 +53,9 @@ void fazer_pedido(Pedido pedido){
 }
 
 int main(){
-    string line;
-    getline(cin, line);
-    Pedido pedido1(line);
+    string endereco;
+    getline(cin, endereco);
+    Pedido pedido1(endereco);
 
     fazer_pedido(pedido1);
     

@@ -10,7 +10,7 @@ using namespace std;
 
 class Hamburguer: public Produto{
     private:
-        bool _artesanal;
+        bool _isArtesanal;
         string _tipo;
 
     public:
