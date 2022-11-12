@@ -6,41 +6,22 @@
 #include <list>
 #include <string>
 #include <iostream>
-using namespace std;
 
-class Pedido{
-    public:
-        Pedido(string endereco): _endereco(endereco){}
 
-        void adiciona_produto(produto *p){
-            _produtos.push_back(p);
-        }
+class Pedido
+{
+public:
+    Pedido(std::string endereco);
 
-        float calcula_total(){
-            float val=0.0;
-            list<produto*>::iterator it;
-            for (it = _produtos.begin(); it != _produtos.end(); it++){
-                val += (*it)->valorUnitario*(*it)->q;
-            }
-            return val;
-        }
+    void adiciona_produto(Produto *p);
 
-        void print_resumo(){
-            list<produto*>::iterator it;
-            cout << "================================" << endl;
-            cout << "Pedido - Endereco: " << _endereco << endl;
-            cout << "Valor total: " << calcula_total() << endl;
-            for (it = _produtos.begin(); it != _produtos.end(); it++){
-                (*it)->print();
-            }
-            cout << "================================" << endl;
-        }
+    float calcula_total();
 
-    private:
-        list<produto*> _produtos;
-        string _endereco;
-        
+    void print_resumo();
 
+private:
+    std::list<Produto *> _produtos;
+    std::string _endereco;
 };
 
 #endif

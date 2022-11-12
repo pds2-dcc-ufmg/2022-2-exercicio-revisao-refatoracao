@@ -3,13 +3,11 @@
 
 #include "pizza.hpp"
 
-
-class pizza_marguerita: public pizza {
-    public:
-        pizza_marguerita(int q, float valor_unitario, int pedacos, bool borda_rech): pizza(q, valor_unitario, pedacos, borda_rech){get_sabor();}
-        virtual string get_sabor() override{
-            return "Marguerita";
-        }
+class Pizza_marguerita : public Pizza
+{
+public:
+    Pizza_marguerita(int q, float valor_unitario, int pedacos, bool borda_rech);
+    virtual std::string get_sabor() override;
 };
 
 #endif
