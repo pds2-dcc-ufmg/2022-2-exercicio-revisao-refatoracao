@@ -13,7 +13,7 @@ private:
     std::string _tipo;
 
 public:
-    Hamburguer(int q, float valor_unitario, std::string tipo, bool artesanal);
+    Hamburguer(int quantidade, float valor_unitario, std::string tipo, bool artesanal);
     virtual void print() override;
     bool artesanal;
     std::string get_tipo();

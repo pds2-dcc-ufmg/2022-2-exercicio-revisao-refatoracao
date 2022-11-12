@@ -18,7 +18,7 @@ float Pedido::calcula_total()
     std::list<Produto *>::iterator it;
     for (it = _produtos.begin(); it != _produtos.end(); it++)
     {
-        val += (*it)->Produto::get_valorUnitario() * (*it)->Produto::get_q();
+        val += (*it)->Produto::get_valor_unitario() * (*it)->Produto::get_quantidade();
     }
     return val;
 }
