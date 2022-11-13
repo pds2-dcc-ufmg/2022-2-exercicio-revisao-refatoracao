@@ -11,7 +11,7 @@ ${TARGET}:  ${BUILD_DIR}/produto.o ${BUILD_DIR}/pedido.o ${BUILD_DIR}/pizza.o ${
 
 	${CC} ${CFLAGS}  ${BUILD_DIR}/produto.o ${BUILD_DIR}/pedido.o ${BUILD_DIR}/pizza.o ${BUILD_DIR}/hamburguer.o ${BUILD_DIR}/main.o -o ${TARGET}
 
-#diretorio e o .o 
+
 ${BUILD_DIR}/produto.o: ${INCLUDE_DIR}/produto.hpp ${ENT_DIR}/produto.cpp
 
 	${CC} ${CFLAGS} -I ${INCLUDE_DIR}/ -c ${ENT_DIR}/produto.cpp -o ${BUILD_DIR}/produto.o
@@ -21,7 +21,7 @@ ${BUILD_DIR}/pedido.o: ${INCLUDE_DIR}/pedido.hpp ${ENT_DIR}/pedido.cpp ${INCLUDE
 	${CC} ${CFLAGS} -I ${INCLUDE_DIR}/ -c ${ENT_DIR}/pedido.cpp -o ${BUILD_DIR}/pedido.o
 
 ${BUILD_DIR}/hamburguer.o: ${INCLUDE_DIR}/hamburguer.hpp ${ENT_DIR}/hamburguer.cpp ${INCLUDE_DIR}/produto.hpp  
-#esse include só fala o diretório dos hpp
+
 	${CC} ${CFLAGS} -I ${INCLUDE_DIR}/ -c ${ENT_DIR}/hamburguer.cpp -o ${BUILD_DIR}/hamburguer.o 
 
 ${BUILD_DIR}/pizza.o: ${INCLUDE_DIR}/pizza.hpp ${ENT_DIR}/pizza.cpp ${INCLUDE_DIR}/produto.hpp 

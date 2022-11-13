@@ -2,8 +2,9 @@
 #include "produto.hpp"
 #include "hamburguer.hpp"
 #include "pizza.hpp"
-//#include "pizza_calabresa.hpp"
-//#include "pizza_marguerita.hpp"
+#define ENCARECIMENTO_PIZZA 1.4
+#define ENCARECIMENTO_HAMBURGUER 2.0
+
 #include <iostream>
 
 int main()
@@ -23,16 +24,17 @@ int main()
             std::string sabor;
             int num_pedac;
             bool borda_recheada;
-            
+
             std::cin >> sabor >> num_pedac >> borda_recheada >> valor_comida >> quantidade;
             if (borda_recheada == true)
             {
-                valor_comida = valor_comida * 1.4;
+                
+                valor_comida = valor_comida * ENCARECIMENTO_PIZZA;
             }
             if (sabor == "Calabresa")
             {
                 prod = new Pizza("Calabresa", quantidade, valor_comida, num_pedac, borda_recheada);
-                // prod = new Pizza_calabresa(q, v, p, b_r);
+
                 pedidos.adiciona_produto(prod);
             }
             else if (sabor == "Marguerita")
@@ -43,13 +45,14 @@ int main()
         }
         else if (tipo_comida == "Hamburguer")
         {
-            //Produto *prod;
+
             std::string tipo_hamburguer;
             bool artesanal;
             std::cin >> tipo_hamburguer >> artesanal >> valor_comida >> quantidade;
             if (artesanal == true)
             {
-                valor_comida = 2.0 * valor_comida;
+                
+                valor_comida = ENCARECIMENTO_HAMBURGUER * valor_comida;
             }
             prod = new Hamburguer(quantidade, valor_comida, tipo_hamburguer, artesanal);
             pedidos.adiciona_produto(prod);
