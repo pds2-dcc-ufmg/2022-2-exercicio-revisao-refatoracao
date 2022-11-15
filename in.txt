@@ -1,0 +1,11 @@
+Rua Goitacazes n 500 apt 1609
+Pizza
+Calabresa 4 1 20 4
+Pizza
+Calabresa 4 0 20 4
+Hamburguer
+X-Burguer 1 35 1
+Pizza
+Marguerita 4 1 50 1
+Pizza
+Marguerita 4 1 50.67 1
