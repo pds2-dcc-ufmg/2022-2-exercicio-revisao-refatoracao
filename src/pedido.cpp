@@ -31,4 +31,8 @@ void Pedido::print_resumo(){
     }
 
     cout << "================================" << endl;
+
+    for (it = _produtos.begin(); it != _produtos.end(); it++){
+        delete *it;
+    }
 }

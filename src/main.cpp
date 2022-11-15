@@ -7,13 +7,11 @@ int main(){
     string sabor, tipo, endereco;
     int quantidade, pedaco, borda_recheada, artesanal;            
     float valor;
-    int x=0;
-
+    
     getline(cin, endereco);
     Pedido pedidos(endereco);
 
-    while (cin >> tipo && x<5){
-        x++;
+    while (cin >> tipo){
         if (tipo == "Pizza"){
             cin >> sabor >> pedaco >> borda_recheada >> valor >> quantidade;
            
