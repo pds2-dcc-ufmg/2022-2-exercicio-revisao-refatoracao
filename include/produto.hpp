@@ -9,7 +9,7 @@ class Produto{
     public:
     Produto(int q, float valor_unitario);
     int get_q();
-    ~Produto() {};
+    virtual ~Produto();
     float get_valorUnitario();
     virtual void print(){}
     

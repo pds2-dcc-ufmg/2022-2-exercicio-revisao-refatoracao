@@ -13,6 +13,8 @@ void Hamburguer::print(){
     if (this->get_artesanal()) cout << "\tArtesanal" << endl;
 }
 
+Hamburguer::~Hamburguer(){}
+
 string Hamburguer::get_tipo(){
     return(this->_tipo);
 }

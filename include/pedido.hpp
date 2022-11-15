@@ -17,11 +17,8 @@ class Pedido{
         
     public:
     Pedido(string endereco);
-
     void adiciona_produto(shared_ptr<Produto> &p);
-
     float calcula_total();
-
     void print_resumo();
         
 };

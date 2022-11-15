@@ -17,7 +17,7 @@ class Hamburguer: public Produto{
     Hamburguer(int q, float valor_unitario, string tipo, bool artesanal);
     virtual void print() override;
     string get_tipo();
-    ~Hamburguer() {};
+    virtual ~Hamburguer();
     bool get_artesanal();
         
 };

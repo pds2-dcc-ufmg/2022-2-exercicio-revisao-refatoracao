@@ -14,6 +14,8 @@ void Pizza::print(){
     if (this->_borda_recheada) cout << "\tBorda Recheada" << endl;
 }
 
+Pizza::~Pizza(){}
+
 string Pizza::get_sabor(){
     return(this->_sabor);
 }

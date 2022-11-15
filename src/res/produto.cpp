@@ -5,6 +5,8 @@ Produto::Produto(int q, float valor_unitario){
     this->_valorUnitario = valor_unitario;
 }
 
+Produto::~Produto(){}
+
 int Produto::get_q(){
     return(this->_q);
 }
