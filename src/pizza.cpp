@@ -1,6 +1,6 @@
 #include "pizza.hpp"
 
-Pizza::Pizza(int quantidade, float valorUnitario, int pedacos, bool isBordaRecheada): Produto(quantidade, valorUnitario), _pedacos(pedacos), _isBordaRecheada(isBordaRecheada){}
+Pizza::Pizza(int quantidade, float valorUnitario, int pedacos, bool isBordaRecheada, string sabor): Produto(quantidade, valorUnitario), _pedacos(pedacos), _isBordaRecheada(isBordaRecheada), _sabor(sabor){}
 
 int Pizza::get_pedacos(){
     return this->_pedacos;
@@ -8,6 +8,10 @@ int Pizza::get_pedacos(){
 
 bool Pizza::get_isBordaRecheada(){
     return this->_isBordaRecheada;
+}
+
+string Pizza::get_sabor(){
+    return this->_sabor;
 }
 
 void Pizza::print(){

@@ -11,16 +11,17 @@ class Pizza: public Produto {
     private:
         int _pedacos;
         bool _isBordaRecheada;
+        string _sabor;
 
     public:
-        Pizza(int quantidade, float valorUnitario, int pedacos, bool isBordaRecheada);
+        Pizza(int quantidade, float valorUnitario, int pedacos, bool isBordaRecheada, string sabor);
 
         int get_pedacos();
         bool get_isBordaRecheada();
 
-        virtual string get_sabor() = 0;
+        string get_sabor();
 
-        virtual void print() override;
+        void print();
 };
 
 #endif

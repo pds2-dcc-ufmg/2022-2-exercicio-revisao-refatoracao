@@ -2,8 +2,6 @@
 #include "produto.hpp"
 #include "hamburguer.hpp"
 #include "pizza.hpp"
-#include "pizza_calabresa.hpp"
-#include "pizza_marguerita.hpp"
 #include <iostream>
 
 using namespace std;
@@ -26,11 +24,11 @@ void fazer_pedido(Pedido pedido){
                 valorUnitario = valorUnitario * taxaBordaRecheada;
             }
             if(sabor == "Calabresa"){
-                produto = new Pizza_calabresa(quantidade,valorUnitario,pedacos, isBordaRecheada);
+                produto = new Pizza(quantidade,valorUnitario,pedacos, isBordaRecheada, "Calabresa");
                 pedido.adiciona_produto(produto);
             }
             else if(sabor == "Marguerita"){
-                produto = new Pizza_marguerita(quantidade,valorUnitario,pedacos, isBordaRecheada);
+                produto = new Pizza(quantidade,valorUnitario,pedacos, isBordaRecheada, "Marguerita");
                 pedido.adiciona_produto(produto);
             }
         }
