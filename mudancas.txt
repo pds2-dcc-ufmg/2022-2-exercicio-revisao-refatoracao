@@ -1,0 +1,14 @@
+Mudar o nome das classes para que tenham letras maiúsculas no início
+Passar o corpo das funções do arquivo hpp para o cpp
+Mudar o nome dos inputs do construtor para que fique mais claro
+Fazer funcoes do tipo get para acessar os atributos da classe
+Colocar os atributos como private
+Incluir as bibliotecas em produto.hpp para ser mais prático
+Remover as classes de sabor de pizza específicas e juntá-las em apenas um classe: Pizza
+Adicinar atributo sabor à classe pizza
+funcoe get sabor deixa de ser virtual e está em Pizza
+Na funcao Adicinar produtos, 
+Nomear as variaveis com nomes menos abstratos
+Alterar o construtor para que mude o valor do produto casos tenha borda recheada ou seja artesanal
+"valor_unitario" deve ser uma variavel protected para ser acessada pelas classes amigas
+Adicionar destrutores
