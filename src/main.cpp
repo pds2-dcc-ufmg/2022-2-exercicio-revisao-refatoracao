@@ -26,14 +26,13 @@ int main(){
         else if (tipo == "Hamburguer"){
             cin >> tipo >> artesanal >> valor >> quantidade;
             if (artesanal == 1){
-                valor = 2.0 * valor;  //valor é aumentado 2 vezes caso o hamburguer seja artesanal
+                valor = (2.0 * valor);  //valor é aumentado 2 vezes caso o hamburguer seja artesanal
             }
             produto = new Hamburguer(quantidade, valor, tipo, artesanal);
             pedidos.adiciona_produto(produto);
         }
     }
-    pedidos.print_resumo();    
-    delete produto;
+    pedidos.print_resumo();  
 
     return 0;
 }

@@ -25,6 +25,7 @@ void Pizza::print(){
         cout << "\tQuantidade: " << this->get_quantidade() << endl;
         cout << "\tValor Unitario: " << this->get_valor_unitario() << endl;
         cout << "\tPedacos: " << this->get_pedacos() << endl;
-        if (this->_borda_recheada) 
+        if (this->_borda_recheada){
             cout << "\tBorda Recheada" << endl;
+        }
     }
