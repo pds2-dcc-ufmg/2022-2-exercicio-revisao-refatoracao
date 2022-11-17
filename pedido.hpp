@@ -3,26 +3,24 @@
 
 #include "produto.hpp"
 
-#include <list>
-#include <string>
-#include <iostream>
+
 using namespace std;
 
-class Pedido{
+class pedido{
     public:
-        Pedido(string endereco): _endereco(endereco){}
+        pedido(string endereco): _endereco(endereco){}
 
-        void adiciona_produto(produto *p){
-            _produtos.push_back(p);
+        void adiciona_produto(produto *_produto){
+            _produtos.push_back(_produto);
         }
 
         float calcula_total(){
-            float val=0.0;
+            float valor_total=0.0;
             list<produto*>::iterator it;
             for (it = _produtos.begin(); it != _produtos.end(); it++){
-                val += (*it)->valorUnitario*(*it)->q;
+                valor_total += (*it)->get_valor_unitario()*(*it)->get_quantidade();
             }
-            return val;
+            return valor_total;
         }
 
         void print_resumo(){
