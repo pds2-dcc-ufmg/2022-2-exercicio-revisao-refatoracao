@@ -9,7 +9,7 @@ class Produto{
     
     public:
         
-        Produto(int quantidade, float valorUunitario);
+        Produto(int quantidade, float valorUnitario);
         virtual void print(){}
         int get_quantidade();
         float get_valorUnitario();
