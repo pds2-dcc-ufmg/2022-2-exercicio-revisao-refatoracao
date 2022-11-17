@@ -1,31 +1,26 @@
-#ifndef PEDIDO_HPP
-#define PEDIDO_HPP
+#include "pedido.hpp"
 
-#include "produto.hpp"
 
-#include <list>
-#include <string>
-#include <iostream>
-using namespace std;
+pedido::pedido(string endereco): _endereco(endereco){}
 
-class Pedido{
-    public:
-        Pedido(string endereco): _endereco(endereco){}
+/* pedido::~pedido(){
+    delete(&_produtos);
+} */
 
-        void adiciona_produto(produto *p){
+void pedido::adiciona_produto(produto *p){
             _produtos.push_back(p);
         }
 
-        float calcula_total(){
+float pedido::calcula_total(){
             float val=0.0;
             list<produto*>::iterator it;
-            for (it = _produtos.begin(); it != _produtos.end(); it++){
-                val += (*it)->valorUnitario*(*it)->q;
+            for (auto it = _produtos.begin(); it != _produtos.end(); it++){
+                val += ((*it) -> getValorUnitario()) * ((*it)-> getQuantidade());
             }
             return val;
-        }
+}
 
-        void print_resumo(){
+void pedido::print_resumo(){
             list<produto*>::iterator it;
             cout << "================================" << endl;
             cout << "Pedido - Endereco: " << _endereco << endl;
@@ -36,11 +31,3 @@ class Pedido{
             cout << "================================" << endl;
         }
 
-    private:
-        list<produto*> _produtos;
-        string _endereco;
-        
-
-};
-
-#endif
