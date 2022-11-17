@@ -14,9 +14,9 @@ class pedido{
         
     public:
         pedido(string endereco);
-        void adiciona_produto(produto *p);
-        float calcula_total();
-        void print_resumo();
+        void adicionaProduto(produto *p);
+        float calculaTotal();
+        void printResumo();
 
 };
 

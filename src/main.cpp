@@ -24,10 +24,10 @@ int main(){
 
             if (sabor == "Calabresa"){
             prod = new pizza (quantidade,valor,pedaco, "Calabresa", borda_rech);
-            pedidos.adiciona_produto(prod);
+            pedidos.adicionaProduto(prod);
             } else if (sabor == "Marguerita"){
                 prod = new pizza (quantidade,valor,pedaco, "Marguerita", borda_rech);
-                pedidos.adiciona_produto(prod);
+                pedidos.adicionaProduto(prod);
             }
         } else if(tipo == "Hamburguer"){
             produto* prod;
@@ -41,11 +41,11 @@ int main(){
             }
 
             prod = new hamburguer(quantidade, valor, tipo, artesanal);
-            pedidos.adiciona_produto(prod);
+            pedidos.adicionaProduto(prod);
         }
 }
 
-pedidos.print_resumo();
+pedidos.printResumo();
 
 
 return 0;

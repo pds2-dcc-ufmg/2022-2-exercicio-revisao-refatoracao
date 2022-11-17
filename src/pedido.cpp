@@ -4,11 +4,11 @@
 pedido::pedido(string endereco): _endereco(endereco){}
 
 
-void pedido::adiciona_produto(produto *p){
+void pedido::adicionaProduto(produto *p){
             _produtos.push_back(p);
         }
 
-float pedido::calcula_total(){
+float pedido::calculaTotal(){
             float val=0.0;
             list<produto*>::iterator it;
             for (auto it = _produtos.begin(); it != _produtos.end(); it++){
@@ -17,11 +17,11 @@ float pedido::calcula_total(){
             return val;
 }
 
-void pedido::print_resumo(){
+void pedido::printResumo(){
             list<produto*>::iterator it;
             cout << "================================" << endl;
             cout << "Pedido - Endereco: " << _endereco << endl;
-            cout << "Valor total: " << calcula_total() << endl;
+            cout << "Valor total: " << calculaTotal() << endl;
             for (it = _produtos.begin(); it != _produtos.end(); it++){
                 (*it)->print();
             }
