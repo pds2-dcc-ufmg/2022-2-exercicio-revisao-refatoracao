@@ -15,7 +15,7 @@ int main() {
   string tipo;
   while (cin >> tipo) {
     if (tipo == "Pizza") {
-      produto *prod;
+      Produto *prod;
       string sabor;
       int q, p, b_r;
       float v;
@@ -24,14 +24,14 @@ int main() {
         v = v * 1.4;
       }
       if (sabor == "Calabresa") {
-        prod = new pizza_calabresa(q, v, p, b_r);
+        prod = new PizzaCalabresa(q, v, p, b_r);
         pedidos.adiciona_produto(prod);
       } else if (sabor == "Marguerita") {
-        prod = new pizza_marguerita(q, v, p, b_r);
+        prod = new PizzaMarguerita(q, v, p, b_r);
         pedidos.adiciona_produto(prod);
       }
     } else if (tipo == "Hamburguer") {
-      produto *prod;
+      Produto *prod;
       int q;
       float v;
       string tipo;
@@ -40,7 +40,7 @@ int main() {
       if (a == 1) {
         v = 2.0 * v;
       }
-      prod = new hamburguer(q, v, tipo, a);
+      prod = new Hamburguer(q, v, tipo, a);
       pedidos.adiciona_produto(prod);
     }
   }
