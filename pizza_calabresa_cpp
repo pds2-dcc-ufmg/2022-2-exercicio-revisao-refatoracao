@@ -1,0 +1,7 @@
+#include "pizza_calabresa.hpp"
+
+Pizza_calabresa::Pizza_calabresa(int quantidade, float valor unitario, int pedacos, bool bordaRecheada): Pizza(quantidade, valorUnitario, pedacos, bordaRecheada);
+
+string Pizza_calabresa::get_sabor(){
+  return "Calabresa";
+}
