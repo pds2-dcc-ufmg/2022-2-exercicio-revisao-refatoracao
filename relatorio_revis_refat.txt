@@ -1,0 +1,65 @@
+REVISÃO E REFATORAÇÃO
+
+NOMENCLATURA
+	- A nomenclatura de "q, p, b_r" e "v" dificulta muito a leitura. 
+	- A nomenclatura das informações sobre o pedido não expressa o que as variáveis significam.
+
+FORMATACAO
+	IDENTACAO
+		- A identação do main é um pesadelo. Todas as linhas juntas configuram um completo caos.
+	OUTROS
+		- Fazer uso de "using namespace std" não é uma boa prática.
+
+LEGIBILIDADE
+	- A identação atrapalha a legibilidade.
+	- A ausência de espaçamento entre linhas que tratam coisas diferentes atrapalha a legibilidade.
+
+ORGANIZAÇÃO
+	- Em produto.hpp, pizza.hpp, ideal colocar o máximo de variáveis no topo, permitindo fácil visualização 
+	  destas para eventuais alterações de valores.
+
+MODULARIZACAO
+	- A grande quantidade de arquivos diferentes dificulta muito a leitura contínua do código.
+	- Não haveria problema em colocar todas as pizzas em um único arquivo, já que representam coisas muito 
+	  próximas e mesmo juntas não deixariam o arquivo grande demais.
+
+COMENTARIOS
+	- Ausência completa de comentários no main.cpp, o que dificulta a compreensão do código.
+
+
+ALTERAÇÕES FEITAS -------------------------------------------------------------
+
+- EM TODOS:
+	> adição de espaços e espaços entre linhas quando necessário.
+	> alteração de var_nome q >> quant.
+
+- ESPECÍFICAS
+
+- main.cpp
+	> correção da identação.
+	> alteração de var_nome q >> quant.
+	> alteração de var_nome p >> n_pedac.
+	> alteração de var_nome b_r >> bord_rech.
+	> alteração de var_nome v >> valor.
+	> alteração de var_nome a >> artesa.
+	> adição do mínimo de comentários para melhor entendimento.
+
+- produto.hpp
+	> var valorUnitario movida para o topo da classe.
+
+- hamburguer.hpp
+
+- pedido.hpp
+
+- pizza_calabresa.hpp
+- pizza_marguerita.hpp
+	> união dos arquivos pizza_calabresa.hpp e pizza_marguerita.hpp em tipo_pizza.hpp. Include dessas 
+	  bibliotecas propriamente modificados nos outros arquivos.
+
+- pizza.hpp
+	> var borda_recheada movida para o topo da classe.
+
+
+WARNINGS: 
+	- Multiplicadores de valor de cada produto desprotegidos em main.cpp. 
+
