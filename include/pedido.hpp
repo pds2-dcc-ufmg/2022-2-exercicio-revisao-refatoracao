@@ -14,7 +14,7 @@ class Pedido {
 		string _endereco;
 	public:
 		Pedido(string endereco);
-		void adiciona_produto(Produto *p);
+		void adiciona_produto(Produto *produto);
 		float calcula_total();
 		void print_resumo();
 };
