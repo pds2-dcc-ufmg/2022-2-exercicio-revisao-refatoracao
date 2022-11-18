@@ -1,3 +1,10 @@
+# Executando
+
+```
+make
+./vpl_exec < in.txt
+```
+
 # Alterações realizadas
 
 - Formatação do código, para ficar mais legível e organizado
