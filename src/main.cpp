@@ -9,41 +9,44 @@
 using namespace std;
 
 int main() {
-  string line;
-  getline(cin, line);
-  Pedido pedidos(line);
-  string tipo;
-  while (cin >> tipo) {
-    if (tipo == "Pizza") {
-      Produto *prod;
-      string sabor;
-      int q, p, b_r;
-      float v;
-      cin >> sabor >> p >> b_r >> v >> q;
-      if (b_r == 1) {
-        v = v * 1.4;
-      }
-      if (sabor == "Calabresa") {
-        prod = new PizzaCalabresa(q, v, p, b_r);
-        pedidos.adiciona_produto(prod);
-      } else if (sabor == "Marguerita") {
-        prod = new PizzaMarguerita(q, v, p, b_r);
-        pedidos.adiciona_produto(prod);
-      }
-    } else if (tipo == "Hamburguer") {
-      Produto *prod;
-      int q;
-      float v;
-      string tipo;
-      int a;
-      cin >> tipo >> a >> v >> q;
-      if (a == 1) {
-        v = 2.0 * v;
-      }
-      prod = new Hamburguer(q, v, tipo, a);
-      pedidos.adiciona_produto(prod);
-    }
-  }
-  pedidos.print_resumo();
-  return 0;
+	string line;
+
+	getline(cin, line);
+	Pedido pedidos(line);
+
+	string tipo;
+	while (cin >> tipo) {
+		if (tipo == "Pizza") {
+			Produto *produto;
+			string sabor;
+			int qtd, pedacos;
+			bool borda_recheada;
+			float valor_unitario;
+			cin >> sabor >> pedacos >> borda_recheada >> valor_unitario >> qtd;
+			if (borda_recheada == 1) {
+				valor_unitario = valor_unitario * 1.4;
+			}
+			if (sabor == "Calabresa") {
+				produto = new PizzaCalabresa(qtd, valor_unitario, pedacos, borda_recheada);
+				pedidos.adiciona_produto(produto);
+			} else if (sabor == "Marguerita") {
+				produto = new PizzaMarguerita(qtd, valor_unitario, pedacos, borda_recheada);
+				pedidos.adiciona_produto(produto);
+			}
+		} else if (tipo == "Hamburguer") {
+			Produto *produto;
+			int qtd;
+			float valor_unitario;
+			string tipo;
+			int artesanal;
+			cin >> tipo >> artesanal >> valor_unitario >> qtd;
+			if (artesanal == 1) {
+				valor_unitario = 2.0 * valor_unitario;
+			}
+			produto = new Hamburguer(qtd, valor_unitario, tipo, artesanal);
+			pedidos.adiciona_produto(produto);
+		}
+	}
+	pedidos.print_resumo();
+	return 0;
 }
