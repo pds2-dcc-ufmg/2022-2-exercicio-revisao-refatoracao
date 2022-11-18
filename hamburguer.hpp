@@ -2,24 +2,18 @@
 #define HAMBURGUER_H
 
 #include "produto.hpp"
-#include <string>
-#include <iostream>
 
-using namespace std;
-
-class hamburguer: public produto{
+class Hamburguer: public Produto{
     public:
-        hamburguer(int q, float valor_unitario, string tipo, bool artesanal): produto(q, valor_unitario), tipo(tipo), artesanal(artesanal){}
-        string tipo;
-        virtual void print() override{
-            cout << "Hamburguer" << endl;
-            cout << "\tQuantidade: " << q << endl;
-            cout << "\tValor Unitario: " << valorUnitario << endl;
-            cout << "\tTipo: " << tipo << endl;
-            if (artesanal) cout << "\tArtesanal" << endl;
-        }
-        bool artesanal;
+        Hamburguer(int quantidade, float valor_unitario, string tipo_burger, bool artesanal);
+        virtual void print_info() override;
+        string getTipoBurguer();
+        bool getArtesanal();
 
+    private:
+        string _tipo_burger;
+        bool _artesanal;
+        const float _TAXA_ARTESANAL = 2.0;
 };
 
 #endif
