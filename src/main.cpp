@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include "Hamburguer.hpp"
-#include "Pedido.hpp"
-#include "Pizza.hpp"
-#include "PizzaCalabresa.hpp"
-#include "PizzaMarguerita.hpp"
-#include "Produto.hpp"
+#include "../include/Hamburguer.hpp"
+#include "../include/Pedido.hpp"
+#include "../include/Pizza.hpp"
+#include "../include/PizzaCalabresa.hpp"
+#include "../include/PizzaMarguerita.hpp"
+#include "../include/Produto.hpp"
 
 using namespace std;
 

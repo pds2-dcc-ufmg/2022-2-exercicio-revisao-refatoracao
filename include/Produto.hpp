@@ -7,17 +7,13 @@ class Produto {
     float _valor_unitario;
 
    public:
-    Produto(int quantidade, float valor_unitario) : _quantidade(quantidade), _valor_unitario(valor_unitario) {}
+    Produto(int quantidade, float valor_unitario);
 
     virtual void print() = 0;
 
-    int getQuantidade() {
-        return _quantidade;
-    }
+    int getQuantidade();
 
-    float getValorUnitario() {
-        return _valor_unitario;
-    }
+    float getValorUnitario();
 };
 
 #endif

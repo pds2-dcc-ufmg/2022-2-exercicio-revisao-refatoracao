@@ -1,4 +1,4 @@
-#include "Hamburguer.hpp"
+#include "../include/Hamburguer.hpp"
 
 Hamburguer::Hamburguer(int quantidade, float valor_unitario, string tipo, bool is_artesanal)
     : Produto(quantidade, valor_unitario), _tipo(tipo), _is_artesanal(is_artesanal) {}

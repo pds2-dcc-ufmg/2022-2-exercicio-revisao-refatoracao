@@ -1,4 +1,4 @@
-#include "Pedido.hpp"
+#include "../include/Pedido.hpp"
 
 Pedido::Pedido(string endereco) : _endereco(endereco) {}
 

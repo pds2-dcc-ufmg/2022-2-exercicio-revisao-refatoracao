@@ -1,4 +1,4 @@
-#include "Produto.hpp"
+#include "../include/Produto.hpp"
 
 Produto::Produto(int quantidade, float valor_unitario) : _quantidade(quantidade), _valor_unitario(valor_unitario) {}
 
