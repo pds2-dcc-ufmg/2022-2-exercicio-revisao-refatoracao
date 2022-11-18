@@ -3,8 +3,6 @@
 #include "../include/Hamburguer.hpp"
 #include "../include/Pedido.hpp"
 #include "../include/Pizza.hpp"
-#include "../include/PizzaCalabresa.hpp"
-#include "../include/PizzaMarguerita.hpp"
 #include "../include/Produto.hpp"
 
 using namespace std;
@@ -31,13 +29,8 @@ int main() {
             if (is_borda_rech) {
                 vlr_unitario *= MULTIPLICADOR_BORDA_RECHEADA;
             }
-            if (sabor == "Calabresa") {
-                pedidos.adicionaProduto(
-                    new PizzaCalabresa(qtd, vlr_unitario, pedacos, is_borda_rech));
-            } else if (sabor == "Marguerita") {
-                pedidos.adicionaProduto(
-                    new PizzaMarguerita(qtd, vlr_unitario, pedacos, is_borda_rech));
-            }
+            pedidos.adicionaProduto(
+                new Pizza(qtd, vlr_unitario, pedacos, is_borda_rech, sabor));
         } else if (tipo == "Hamburguer") {
             string tipo;
             int qtd;

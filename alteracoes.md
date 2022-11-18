@@ -1,3 +1,5 @@
+# Alterações realizadas
+
 - Formatação do código, para ficar mais legível e organizado
 - Classes com nomes iniciados com letra maiúscula
 - Ajustes nos nomes das variáveis: colocando underline para atributos de classe e colocando "is..." para variáveis booleanas
@@ -5,6 +7,7 @@
 - Trocando for com iterator por um range-based for, deixando o código mais limpo e legível
 - Modularização do código, separando contratos (.hpp) das implementações (.cpp)
 - Organização dos arquivos
+- Removendo classes PizzaCalabresa e PizzaMarguerita, agora há um parâmetro "sabor" na classe Pizza, e ela deixa de ser abstrata pois no novo escopo não é mais necessário
 
 # SAIDA ESPERADA:
 

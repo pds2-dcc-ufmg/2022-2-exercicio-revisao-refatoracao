@@ -1,7 +1,11 @@
 #include "../include/Pizza.hpp"
 
-Pizza::Pizza(int quantidade, float valor_unitario, int pedacos, bool is_borda_rech)
-    : Produto(quantidade, valor_unitario), _pedacos(pedacos), _is_borda_recheada(is_borda_rech) {}
+Pizza::Pizza(int quantidade, float valor_unitario, int pedacos, bool is_borda_rech, string sabor)
+    : Produto(quantidade, valor_unitario), _pedacos(pedacos), _is_borda_recheada(is_borda_rech), _sabor(sabor) {}
+
+string Pizza::getSabor() {
+    return _sabor;
+}
 
 void Pizza::print() {
     cout << "Pizza de " << getSabor() << endl;
