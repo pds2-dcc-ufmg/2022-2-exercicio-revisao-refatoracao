@@ -12,17 +12,8 @@ class Hamburguer : public Produto {
     string _tipo;
     bool _artesanal;
   public:
-    Hamburguer(int q, float valor_unitario, string tipo, bool artesanal) : Produto(q, valor_unitario), tipo(tipo), artesanal(artesanal) {}
-    string tipo;
-    virtual void print() override {
-      cout << "Hamburguer" << endl;
-      cout << "\tQuantidade: " << q << endl;
-      cout << "\tValor Unitario: " << valorUnitario << endl;
-      cout << "\tTipo: " << tipo << endl;
-      if (artesanal)
-        cout << "\tArtesanal" << endl;
-    }
-    bool artesanal;
+    Hamburguer(int q, float valor_unitario, string tipo, bool artesanal);
+    virtual void print() override;
 };
 
 #endif
