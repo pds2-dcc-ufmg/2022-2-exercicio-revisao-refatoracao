@@ -7,7 +7,7 @@ O objetivo dessa atividade é praticar a parte de revisão e refatoração utili
 
 O código atual pode ser compilado/executado usando os seguintes comandos:
 ```
-g++ main.cpp -o vpl_exec
+g++ main.cpp pedido.cpp pizza.cpp produto.cpp hamburguer.cpp -o vpl_exec
 ./vpl_exec < in.txt
 ```
 
@@ -17,3 +17,11 @@ No **título** do seu Pull Request, informe o valor **MD5** obtido a partir da s
 
 Lembre-se de analisar aspectos como: nomenclatura, formatação, organização, modularização, comentários, aplicação correta dos conceitos de OO, entre outros.
 Dica: Utilize o catálogo para pensar em possíveis sugestões de refatoração (https://refactoring.com/catalog/).
+
+- tabulação e quebra de linhas
+- padronização de variaveis
+- organização de arquivos em headers
+- junção de classes distintas para pizzas em uma só
+- envio do sabor em formato de string
+- padronização letras maiusculas e minusculas nas classes
+- atualização do comando de compilação para incluir os novos arquivos.cpp
