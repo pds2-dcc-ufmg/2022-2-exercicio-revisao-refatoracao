@@ -1,7 +1,6 @@
 #include "pedido.hpp"
 #include "hamburguer.hpp"
 #include "pizza.hpp"
-#include <iostream>
 
 using namespace std;
 
