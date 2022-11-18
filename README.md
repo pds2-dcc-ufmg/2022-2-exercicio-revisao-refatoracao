@@ -7,7 +7,7 @@ O objetivo dessa atividade é praticar a parte de revisão e refatoração utili
 
 O código atual pode ser compilado/executado usando os seguintes comandos:
 ```
-g++ main.cpp -o vpl_exec
+g++ main.cpp pedido.cpp pizza.cpp produto.cpp hamburguer.cpp -o vpl_exec
 ./vpl_exec < in.txt
 ```
 
