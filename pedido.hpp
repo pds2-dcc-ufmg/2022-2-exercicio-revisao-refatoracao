@@ -1,46 +1,24 @@
 #ifndef PEDIDO_HPP
 #define PEDIDO_HPP
 
-#include "produto.hpp"
-
-#include <list>
-#include <string>
-#include <iostream>
-using namespace std;
+#include "hamburguer.hpp"
+#include "pizza_calabresa.hpp"
+#include "pizza_marguerita.hpp"
+#include <vector>
+#include <memory>
 
 class Pedido{
     public:
-        Pedido(string endereco): _endereco(endereco){}
-
-        void adiciona_produto(produto *p){
-            _produtos.push_back(p);
-        }
-
-        float calcula_total(){
-            float val=0.0;
-            list<produto*>::iterator it;
-            for (it = _produtos.begin(); it != _produtos.end(); it++){
-                val += (*it)->valorUnitario*(*it)->q;
-            }
-            return val;
-        }
-
-        void print_resumo(){
-            list<produto*>::iterator it;
-            cout << "================================" << endl;
-            cout << "Pedido - Endereco: " << _endereco << endl;
-            cout << "Valor total: " << calcula_total() << endl;
-            for (it = _produtos.begin(); it != _produtos.end(); it++){
-                (*it)->print();
-            }
-            cout << "================================" << endl;
-        }
+        Pedido(std::string endereco);
+        void adiciona_produto(int quantidade, float valor_unitario, string tipo_burger, bool artesanal);
+        void adiciona_produto(string sabor, int quantidade, float valor_unitario, int pedacos, bool borda_rech);
+        float calcula_total();
+        void print_resumo();
 
     private:
-        list<produto*> _produtos;
-        string _endereco;
-        
-
+        std::string _endereco;
+        vector<shared_ptr<Produto>> _produtos;
+        float _soma_total = 0;
 };
 
 #endif

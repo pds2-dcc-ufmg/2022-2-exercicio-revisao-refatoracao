@@ -3,13 +3,9 @@
 
 #include "pizza.hpp"
 
-
-class pizza_marguerita: public pizza {
+class PizzaMarguerita: public Pizza{
     public:
-        pizza_marguerita(int q, float valor_unitario, int pedacos, bool borda_rech): pizza(q, valor_unitario, pedacos, borda_rech){get_sabor();}
-        virtual string get_sabor() override{
-            return "Marguerita";
-        }
+        PizzaMarguerita(int quantidade, float valor_unitario, int pedacos, bool borda_rech);
 };
 
 #endif
