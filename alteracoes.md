@@ -15,6 +15,7 @@ make
 - Modularização do código, separando contratos (.hpp) das implementações (.cpp)
 - Organização dos arquivos
 - Removendo classes PizzaCalabresa e PizzaMarguerita, agora há um parâmetro "sabor" na classe Pizza, e ela deixa de ser abstrata pois no novo escopo não é mais necessário
+- Criação do Makefile
 
 # SAIDA ESPERADA:
 
